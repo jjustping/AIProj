@@ -25,16 +25,15 @@ class MyApp(QMainWindow):
         file_name, _ = QFileDialog.getOpenFileName(self, "QFileDialog.getOpenFileName", "","All Files (*);;JPEG Files (*.jpg)", options=options)
         if file_name:
             pixmap = QPixmap(file_name)
-            new_window = QMainWindow()
+            self.new_window = QMainWindow()
             label = QLabel()
             label.setPixmap(pixmap)
-            new_window.setCentralWidget(label)
-            new_window.setGeometry(500, 500, 300, 300)
-            new_window.setWindowTitle("Изображение")
-            new_window.show()
+            self.new_window.setCentralWidget(label)
+            self.new_window.setGeometry(500, 500, 300, 300)
+            self.new_window.setWindowTitle("Изображение")
         #-------------------------------------------------
-        new_window.show()
-    
+            self.new_window.show()
+        
     def open_web_window(self):
         new_window = QMainWindow()
         new_window.setGeometry(500, 500, 300, 300)
