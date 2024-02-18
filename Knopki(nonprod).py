@@ -23,9 +23,7 @@ class MyApp(QMainWindow):
         new_window.setGeometry(500, 500, 300, 300)
         new_window.setWindowTitle("Фото")
         #-------------------------------------------------
-        label = QLabel()
-        label.setPixmap(QPixmap("zaglushka.jpg")) #заглушка
-        new_window.setCentralWidget(label)
+        
         #-------------------------------------------------
         new_window.show()
     
