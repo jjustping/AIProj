@@ -1,5 +1,5 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton
-from PyQt5.QtCore import QCoreApplication   
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel
+from PyQt5.QtCore import QCoreApplication
 import sys
 
 class MyApp(QMainWindow):
@@ -11,14 +11,29 @@ class MyApp(QMainWindow):
         self.button1 = QPushButton(self)
         self.button1.setText("Фото")
         self.button1.move(50, 50)
+        self.button1.clicked.connect(self.open_photo_window)
 
         self.button2 = QPushButton(self)
         self.button2.setText("Веб-камера")
         self.button2.move(50, 100)
+        self.button2.clicked.connect(self.open_web_window)
 
-        self.button3 = QPushButton(self)
-        self.button3.setText("Видео")
-        self.button3.move(50, 150)
+    def open_photo_window(self):
+        new_window = QMainWindow()
+        new_window.setGeometry(500, 500, 300, 300)
+        new_window.setWindowTitle("Фото")
+        #-------------------------------------------------
+        label = QLabel()
+        label.setPixmap(QPixmap("zaglushka.jpg")) #заглушка
+        new_window.setCentralWidget(label)
+        #-------------------------------------------------
+        new_window.show()
+    
+    def open_web_window(self):
+        new_window = QMainWindow()
+        new_window.setGeometry(500, 500, 300, 300)
+        new_window.setWindowTitle("Веб-камера")
+        new_window.show()
 
 app = QApplication(sys.argv)
 window = MyApp()
