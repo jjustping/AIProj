@@ -7,8 +7,8 @@ import cv2
 class MyApp(QMainWindow):
     def __init__(self):
         super().__init__()
-
-        self.setWindowTitle("Webcam")
+        self.setGeometry(100, 100, 300, 300)
+        self.setWindowTitle("Главное окно")
 
         # Кнопка для открытия окна с вебкамерой
         self.button_webcam = QPushButton("Open Webcam")
@@ -33,6 +33,7 @@ class MyApp(QMainWindow):
         # Новое окно с вебкамерой
         self.webcam_window = WebcamWindow()
         self.webcam_window.show()
+        self.webcam_window.setMinimumSize(700, 600)
 
     def open_photo_window(self):
         options = QFileDialog.Options()
