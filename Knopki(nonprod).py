@@ -18,7 +18,7 @@ class MyApp(QMainWindow):
         self.button_photo = QPushButton("Open Photo")
         self.button_photo.clicked.connect(self.open_photo_window)
 
-        # Вертикальный компоновщик и добавляем в него кнопки
+        # Вертикальный компоновщик и добавленные в него кнопки
         layout = QVBoxLayout()
         layout.addWidget(self.button_webcam)
         layout.addWidget(self.button_photo)
